@@ -10,7 +10,7 @@
 		"Other"
 	],
 	"activationEvents": [
-        "onCommand:vscode-ext-key-logger.start"
+        "*"
 	],
 	"main": "./out/extension.js",
 	"contributes": {
@@ -23,7 +23,18 @@
 				"command": "vscode-ext-key-logger.stop",
 				"title": "KeyLogger: stop"
 			}
-		]
+		],
+		"configuration": {
+			"type": "object",
+			"title": "KeyLogger config",
+			"properties": {
+				"vscode-ext-key-logger.outFile": {
+					"type": "string",
+					"default": "",
+					"description": "Auto output file."
+				}
+			}
+		}
 	},
 	"scripts": {
 		"vscode:prepublish": "npm run compile",
